@@ -1,0 +1,205 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    height:100vh;
+    background-color: #b784db;
+    background-image: url("https://takeitphoto.com/wp-content/uploads/2018/10/19-16758-post/wedding-proposal-cancun-The-Ritz-Carlton-Cancun-photographer-DaUr-1003.jpg");
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repeating */
+    
+    background-attachment:fixed ;
+}
+.click-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff69b4; /* Pink button */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.click-button:hover {
+    background-color: #e60073; /* Darker pink */
+}
+
+/*@keyframes envelope{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-30px);
+    }
+}*/
+.envelope{
+    position:relative;
+    cursor:pointer;
+    right: 160px;
+    top: -20px;
+    animation: envelope 3s ease-in-out infinite;
+
+}
+.back{
+    position:relative;
+    width:250px;
+    height:200px;
+    background:#6247aa;
+}
+.front{
+    position:absolute;
+    border-right:130px solid #815ac0;
+    border-top:100px solid transparent;
+    border-bottom:100px solid transparent;
+    height:0;
+    width:0;
+    top:0;
+    left:120px;
+    z-index:3
+}
+.front::before{
+    content: '';
+    position: absolute;
+    border-left:130px solid #815ac0;
+    border-top:100px solid transparent;
+    border-bottom:100px solid transparent;
+    height:0;
+    width:0;
+    top:-100px;
+    left:-120px;
+    
+}
+.front::after{
+    content:'';
+    position:absolute;
+    border-bottom:105px solid #7251b5;
+    border-left:125px solid transparent;
+    border-right:125px solid transparent;
+    height:0;
+    width:0;
+    top:-5px;
+    left:-120px;
+    
+}
+.top{
+    position:absolute;
+    border-top:105px solid #9163cb;
+    border-left:125px solid transparent;
+    border-right:125px solid transparent;
+    height:0;
+    width:0;
+    top:0;
+   transform-origin:top;
+   transition: 0.4s;
+}
+.envelope:hover .top{
+    transform:rotatex(160deg);
+}
+.letter{
+    position:absolute;
+    background:#eae2b7;
+    width:230px;
+    height:180px;
+    top:10px;
+    left:10px;
+    transition:0.2s;
+}
+.envelope:hover .letter{
+    transform:translateY(-100px);
+    z-index:2;
+}
+.text1{
+    position:absolute;
+    color:white;
+    font-family:sans-serif;
+    top:-45%;
+    left: 20px;
+}
+a {
+    display: inline-block; /* Ensures it appears as a clickable element */
+    color: blue; /* Makes it look like a standard link */
+    text-decoration: underline; /* Makes it clear it's a link */
+    cursor: pointer; /* Changes the mouse cursor to indicate clickability */
+  }
+  
+.text{
+    text-align:center;
+    font-size:13px;
+    font-family:arial,helvetica,sans-serif;
+    margin-top:20px;
+    font-weight:bold;
+    color:#003049;
+    position:relative;
+    top:20px;
+    align-items: center;
+}
+.hearts{
+    position: absolute;
+    top:10px;
+}
+@keyframes heart {
+    0%{
+        transform:translateY(0) rotate(-40deg) scale(0.1);
+        capacity:1;
+    }100%{
+        transform:translateY(-150px) rotate(-45deg) scale(0.7);
+        capacity:0.5;
+    }
+}
+.one, .two, .three, .four, .five{
+  background-color: red;
+  display:inline-block;
+  height:10px;
+  width:10px;
+  margin:0 10px;
+  position:relative;
+  transform:rotate(-45deg);
+  top:50px;
+}
+.one:before, .one:after,.two:before,.two:after,.three:before,.three:after,.four:before,.four:after,.five:before,.five:after{
+    content:"";
+    background-color: red;
+    border-radius: 50%;
+    width:10px;
+    height:10px;
+    position:absolute;
+}
+.one:before,.two:before,.three:before,.four:before,.five:before{
+    top:-5px;
+    left:0;
+}
+.one:after,.two:after,.three:after,.four:after,.five:after{
+    left:5px;
+    top:0;
+}
+.one{
+    left:2px;
+    animation:heart 1s ease-out infinite;
+}
+.two{
+    left:25px;
+    animation:heart 2s ease-out infinite;
+}
+.three{
+    left:45px;
+    animation:heart 1.5s ease-out infinite;
+}
+.four{
+    left:65px;
+    animation:heart 2.3s ease-out infinite;
+}
+.five{
+    left:85px;
+    animation:heart 1.7s ease-out infinite;
+}
+@keyframes scale{
+    0%,100%{
+        transform:scaleX(1);
+    }50%{
+        transform:scaleX(0.85);
+    }
+}
+
+
